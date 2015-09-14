@@ -10,17 +10,20 @@ function chk() {
 	else
 		$('#submit').addClass('disabled');
 }
+
 function resettxt() {
 	$('#uname').val("");
 	$('#pass').val("");
 	$('#cpass').val("");
 }
+
 function notify(string){
 	$.notify(string,{
 		className: 'success',
 		globalPosition: 'top center'
 	});
 }
+
 $(document).ready(function() {
 	$('.usert').click(function() {
 		$('.usert').addClass('active');
@@ -34,6 +37,12 @@ $(document).ready(function() {
 		$('.createt').addClass('active');
 		$('#one').css('display', 'none');
 		$('#two').css('display', 'block');
+	});
+
+	$('#btnOrigin').on("click",function(){
+		alert($('#btnOrigin').val());
+		$('#btttn').text($('#btnOrigin').text());
+
 	});
 
 	$('#submit').click(function(){
