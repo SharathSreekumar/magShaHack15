@@ -1,0 +1,47 @@
+body{
+	background-color: #4F1C68;
+}
+.nav > li > a:focus{
+	outline: none;
+}
+.dashmain{
+	display: block;
+	margin-top: 30px;
+}
+.nav-tabs li{
+	width: 33.333333%;
+	background-color: #4F1C68;
+	border-radius: 0;
+}
+.nav-tabs a{
+	font-weight: bold;
+	color: #fafafa;
+	margin-right: 0 !important;
+	border-color: #fff !important;
+	border-radius: 0 !important;
+}
+.nav-tabs a:hover{
+	color: #000;
+}
+.nav-tabs .active{
+	color: #000;
+}
+.form-control{
+	width: calc(100% - 24px);
+}
+.users{
+	text-align: center;
+	width: 60%;
+	margin: 6% 20%
+}
+.users input, .users select{
+	margin: 20px 8px;
+}
+#two, #three{
+	display: none;
+}
+table{
+	border: 2px solid #000;
+	max-height: 300px;
+	overflow: scroll;
+}

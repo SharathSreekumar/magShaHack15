@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/css/style.css">
+	<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+	<title>Login - Kadamba</title>
+</head>
+<body>
+	<div class="container login">
+		<div class="jumbotron">
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active usert"><a href="#">Login</a></li>
+				<li role="presentation" class="createt"><a href="#">Create New Account</a></li>
+			</ul>
+			<div class="panel panel-default" id="one">
+				<form  action="login.php" method="POST" class="jumbotron">
+					<h2>KADAMBA LOGIN</h2>
+					<div class="panel-body jumbotron users">
+						<input type="text" class="form-control" name="uname" id="user1" placeholder="Username">
+						<input type="password" class="form-control" name="pword" placeholder="Password">
+						<input type="submit" value="Login" class="form-control btn btn-success">
+					</div>
+				</form>
+			</div>
+			<div class="panel panel-default" id="two">
+				<form  action="create.php" method="POST" class="jumbotron">
+					<h2>CREATE  NEW ACCOUNT</h2>
+					<div class="panel-body jumbotron users">
+						<input type="text" id="uname" class="form-control" name="uname" placeholder="Username">
+						<input type="password" class="form-control" id="pass" onchange="chk()" onkeyup="chk()" onkeydown="chk()" name="pword" placeholder="Password">
+						<input type="password" class="form-control" id="cpass" onchange="chk()" onkeyup="chk()" onkeydown="chk()" name="cpword" placeholder="Confirm Password">
+						<button id="submit" class="form-control btn btn-success disabled">Create User</button>
+						<input type="reset" onclick="resettxt()" class="form-control btn btn-info" value="Reset">
+					</div>
+				</form>
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="dist/js/main.js"></script>
+</body>
+</html>

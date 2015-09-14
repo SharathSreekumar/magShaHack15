@@ -1,0 +1,11 @@
+input{
+	margin: 10px 0;
+}
+.login{
+	margin: 10% 25%;
+	width: 50%;
+}
+
+#two{
+	display: none;
+}
