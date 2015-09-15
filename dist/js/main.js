@@ -11,6 +11,14 @@ function chk() {
 		$('#submit').addClass('disabled');
 }
 
+function chck(){
+	if ($("#pword").val() != "" && $("#pword").val() != " "){
+		$('#login').addClass('disabled');
+	}else{
+			$('#login').removeClass('disabled');
+	}
+}
+
 function resettxt() {
 	$('#uname').val("");
 	$('#pass').val("");
@@ -22,6 +30,13 @@ function notify(string){
 		className: 'success',
 		globalPosition: 'top center'
 	});
+}
+
+function checkEmp()
+{
+	if ($("#newloc").val() == "" && $("#newloc").val() == " "){
+		alert("Please enter data before submitting");
+	}
 }
 
 $(document).ready(function() {
@@ -37,6 +52,20 @@ $(document).ready(function() {
 		$('.createt').addClass('active');
 		$('#one').css('display', 'none');
 		$('#two').css('display', 'block');
+	});
+
+	$('.bust').click(function() {
+		$('.bust').addClass('active');
+		$('.createbl').removeClass('active');
+		$('#three').css('display', 'block');
+		$('#four').css('display', 'none');
+	});
+
+	$('.createbl').click(function() {
+		$('.createbl').addClass('active');
+		$('.bust').removeClass('active');
+		$('#four').css('display', 'block');
+		$('#three').css('display', 'none');
 	});
 
 	$('#btnOrigin').on("click",function(){

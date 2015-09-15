@@ -9,3 +9,7 @@ input{
 #two{
 	display: none;
 }
+
+#login{
+	disabled:true;
+}

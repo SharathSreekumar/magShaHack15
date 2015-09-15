@@ -15,7 +15,7 @@ if($_POST['cpword']==$_POST['pword'])
   	}
 //echo "1 record added";
 	mysql_close($con);
-	include('dashboard/index.php');
+	include('indexa.php');
 }
 elseif($_POST['password']!=$_POST['confirmpassword'])
 {

@@ -16,7 +16,7 @@ $con = mysql_connect("localhost","root","");
 
     if (mysql_num_rows($result) > 0) { 
 		  $_SESSION['user1']=$_POST['uname'];
-		  include("dashboard/index.php");
+		  include("indexa.php");
     }else{  
     	echo <<<EOF
     	<script type="text/javascript">
