@@ -1,12 +1,13 @@
 <html>
 <body>
 <?php 
-$con = mysql_connect("localhost","root","");
+if($_POST['uname']!=="" && $_POST['uname']!==" "){
+  $con = mysql_connect("localhost","root","");
   if (!$con){
-    die('Could not connect: ' . mysql_error());
+      die('Could not connect: ' . mysql_error());
   }
- session_start();
- if ( isset($_SESSION['user1'])){
+  session_start();
+  if ( isset($_SESSION['user1'])){
 	 $name1=$_POST['uname'];
 	 $pwd1=$_POST['pword'];
 
@@ -16,6 +17,8 @@ $con = mysql_connect("localhost","root","");
 
     if (mysql_num_rows($result) > 0) { 
 		  $_SESSION['user1']=$_POST['uname'];
+      $cookie_name=$_POST['uname'];
+      setcookie($cookie_name, time() + (600000));// 60 sec
 		  include("indexa.php");
     }else{  
     	echo <<<EOF
@@ -26,7 +29,16 @@ EOF;
       include ("index.html");
       exit();
     }
-  } 
+  }
+}else{
+  echo <<<EOF
+      <script type="text/javascript">
+      window.onload=function(){alert("Please enter Username and password");}
+      </script>
+EOF;
+  include ("index.html");
+  exit();
+} 
 ?>
 </body>
 </html>

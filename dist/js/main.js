@@ -12,10 +12,10 @@ function chk() {
 }
 
 function chck(){
-	if ($("#pword").val() != "" && $("#pword").val() != " "){
+	if ($("#user1").val() != "" && $("#user1").val() != " "){
 		$('#login').addClass('disabled');
 	}else{
-			$('#login').removeClass('disabled');
+		$('#login').removeClass('disabled');
 	}
 }
 
@@ -34,7 +34,14 @@ function notify(string){
 
 function checkEmp()
 {
-	if ($("#newloc").val() == "" && $("#newloc").val() == " "){
+	if ($("#newloc").val() == "" || $("#newloc").val() == " "){
+		alert("Please enter data before submitting");
+	}
+}
+
+function checkEmpS()
+{
+	if ($("#newser").val() == "" || $("#newser").val() == " "){
 		alert("Please enter data before submitting");
 	}
 }
@@ -57,14 +64,27 @@ $(document).ready(function() {
 	$('.bust').click(function() {
 		$('.bust').addClass('active');
 		$('.createbl').removeClass('active');
+		$('.createbl').removeClass('active');
 		$('#three').css('display', 'block');
 		$('#four').css('display', 'none');
+		$('#five').css('display', 'none');
 	});
 
 	$('.createbl').click(function() {
 		$('.createbl').addClass('active');
+		$('.createbs').removeClass('active');
 		$('.bust').removeClass('active');
 		$('#four').css('display', 'block');
+		$('#five').css('display', 'none');
+		$('#three').css('display', 'none');
+	});
+
+	$('.createbs').click(function() {
+		$('.createbs').addClass('active');
+		$('.createbl').removeClass('active');
+		$('.bust').removeClass('active');
+		$('#five').css('display', 'block');
+		$('#four').css('display', 'none');
 		$('#three').css('display', 'none');
 	});
 

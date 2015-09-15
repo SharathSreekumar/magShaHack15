@@ -7,7 +7,7 @@ if($_POST['origin']!=$_POST['destination'])
   		die('Could not connect: ' . mysql_error());
   	}
 	mysql_select_db("hackathon", $con);
-	$sql="INSERT INTO `hackathon`.`busroute`(`origin`,`dest`,`time`)VALUES('$_REQUEST[origin]','$_REQUEST[destination]','$_REQUEST[time]');";
+	$sql="INSERT INTO `hackathon`.`busroute`(`origin`,`dest`,`time`,`service`)VALUES('$_REQUEST[origin]','$_REQUEST[destination]','$_REQUEST[time]','$_REQUEST[service]');";
 
 	if (!mysql_query($sql,$con))
   	{

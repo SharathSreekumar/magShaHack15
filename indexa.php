@@ -27,10 +27,11 @@
 	<div><br/></div>
 	<div class="container dashmain">
 		<div class="jumbotron">
-			<h2>Welcome</h2><?php echo $_REQUEST["uname"];?>
+			<h2>Welcome</h2><?php echo $cookie_name;?>
 			<ul class="nav nav-tabs">
 				<li role="presentation" class="active bust"><a href="#">Add Bus Route</a></li>
 				<li role="presentation" class="createbl"><a href="#">Add New Location</a></li>
+				<li role="presentation" class="createbs"><a href="#">Service</a></li>
 			</ul>
 			
 			<div class="panel panel-default" id="three">
@@ -88,6 +89,22 @@
 					</select>
 					<input type="time" class="form-control" id="time" name="time"/>
 					<div><input type="submit"  class="form-control btn btn-success" style="width:150px;" onclick="check()" value="Add new route" name="submit"/></div>
+					<table class="list-group">
+						<?php
+							$con = mysql_connect("localhost","root","");
+							if (!$con)
+  							{
+  								die('Could not connect: ' . mysql_error());
+  							}
+
+							mysql_select_db("hackathon", $con);
+							$result1 = mysql_query("SELECT * FROM busroute");
+							while($row1 = mysql_fetch_array($result1))
+							{
+								echo "<tr "."class="."\"list-group-item\"><td "."class="."\"list-group-item\">".$row1['origin']."</td><td "."class="."\"list-group-item\">".$row1['time']."</td><td "."class="."\"list-group-item\">".$row1['dest']."</td><td "."class="."\"list-group-item\">".$row1['service']."</td></tr>";
+							}
+						?>
+					</table>
 				</form>
 			</div>
 			<div  class="panel panel-default" id="four">
@@ -107,6 +124,28 @@
 							while($row1 = mysql_fetch_array($result1))
 							{
 								echo "<li "."class="."\"list-group-item\">".$row1['location']."</li>";
+							}
+						?>
+					</ul>
+				</form>
+			</div>
+			<div  class="panel panel-default" id="five">
+				<form method="POST" action="insertservice.php" class="panel-body jumbotron users">
+					<input type="text" id="newser" name="ser" class="form-control" placeholder="New Service"/>
+					<div><input type="submit"  class="form-control btn btn-success" style="width:150px;" onclick="checkEmpS()" value="Add new service" name="submit"/></div>
+					<ul class="list-group">
+						<?php
+							$con = mysql_connect("localhost","root","");
+							if (!$con)
+  							{
+  								die('Could not connect: ' . mysql_error());
+  							}
+
+							mysql_select_db("hackathon", $con);
+							$result1 = mysql_query("SELECT * FROM service");
+							while($row1 = mysql_fetch_array($result1))
+							{
+								echo "<li "."class="."\"list-group-item\">".$row1['type']."</li>";
 							}
 						?>
 					</ul>
